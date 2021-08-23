@@ -1,0 +1,5 @@
+---
+title: "IS415_Blog"
+site: distill::distill_website
+listing: posts
+---

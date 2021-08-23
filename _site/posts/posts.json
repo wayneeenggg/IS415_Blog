@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to IS415_Blog",
+    "description": "Welcome to our new blog, IS415_Blog. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Wayne Ng",
+        "url": "https://www.linkedin.com/in/wayne-ng-56331b208"
+      }
+    ],
+    "date": "2021-08-23",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-08-22T18:40:48-07:00",
+    "input_file": "welcome.knit.md"
+  }
+]
