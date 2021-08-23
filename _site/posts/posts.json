@@ -30,7 +30,7 @@
     "categories": [],
     "contents": "\r\nGetting Started\r\nThis code chunk performs three tasks:\r\ncreate a list of R packages needed.\r\n\r\n\r\npackages <- c('sf', 'tidyverse')\r\nfor(p in packages){\r\n  if(!require(p, character.only = T)){\r\n    install.packages(p)\r\n  }\r\n  library(p, character.only = T)\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-08-22T20:39:16-07:00",
+    "last_modified": "2021-08-22T20:41:35-07:00",
     "input_file": {}
   }
 ]

@@ -16,7 +16,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Getting Started
+## Getting Started
 
 This code chunk performs three tasks:
 
