@@ -1,0 +1,36 @@
+---
+title: "In-class Exercise 2"
+description: |
+  In this hands on exercise, I learn how to handle Geospatial Data in R by using SF package
+author:
+  - name: Wayne Ng
+    url: https://www.linkedin.com/in/wayne-ng-56331b208
+date: 08-22-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Getting Started
+
+This code chunk performs three tasks:
+
+- create a list of R packages needed.
+
+```{r echo=TRUE, eval=TRUE}
+packages <- c('sf', 'tidyverse')
+for(p in packages){
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p, character.only = T)
+}
+
+```
+
+

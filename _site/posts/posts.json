@@ -14,6 +14,23 @@
     "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2021-08-22T18:40:48-07:00",
-    "input_file": "welcome.knit.md"
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-08-22-in-class-exercise-2/",
+    "title": "In-class Exercise 2",
+    "description": "In this hands on exercise, I learn how to handle Geospatial Data in R by using SF package",
+    "author": [
+      {
+        "name": "Wayne Ng",
+        "url": "https://www.linkedin.com/in/wayne-ng-56331b208"
+      }
+    ],
+    "date": "2021-08-22",
+    "categories": [],
+    "contents": "\r\nGetting Started\r\nThis code chunk performs three tasks:\r\ncreate a list of R packages needed.\r\n\r\n\r\npackages <- c('sf', 'tidyverse')\r\nfor(p in packages){\r\n  if(!require(p, character.only = T)){\r\n    install.packages(p)\r\n  }\r\n  library(p, character.only = T)\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-08-22T20:28:28-07:00",
+    "input_file": {}
   }
 ]
