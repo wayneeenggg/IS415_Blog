@@ -32,46 +32,46 @@ library(p,character.only = T)
 }
 ```
 # Importing Geospatial Data
-```{r}
+```{r echo=TRUE}
 childcare_sf <- st_read("data/child-care-services-geojson.geojson") %>%
   st_transform(crs = 3414)
 ```
 
-```{r}
+```{r echo=TRUE}
 sg_sf <- st_read(dsn = "data", layer="CostalOutline")
 ```
-```{r}
+```{r echo=TRUE}
 mpsz_sf <- st_read(dsn = "data", 
                 layer = "MP14_SUBZONE_WEB_PL")
 ```
 # Importing RDS
-```{r}
+```{r echo=TRUE}
 childcare <- read_rds("data/rds/childcare.rds")
 CHAS <- read_rds("data/rds/CHAS.rds")
 ```
 
-```{r}
+```{r echo=TRUE}
 CHAS_sf <- st_as_sf(CHAS, coords = c("X_COORDINATE","Y_COORDINATE" ), crs=3414)
 ```
 
-```{r}
+```{r echo=TRUE}
 childcare$Lat <- as.numeric(childcare$Lat)
 childcare$Lng <- as.numeric(childcare$Lng)
 childcare_sf <- st_as_sf(childcare, coords = c("Lng", "Lat"), crs=4326) %>%
   st_transform(crs = 3414)
 ```
-```{r}
+```{r echo=TRUE}
 childcare <- as_Spatial(childcare_sf)
 CHAS <- as_Spatial(CHAS_sf)
 mpsz <- as_Spatial(mpsz_sf)
 sg <- as_Spatial(sg_sf)
 ```
-```{r}
+```{r echo=TRUE}
 childcare_sp <- as(childcare, "SpatialPoints")
 CHAS_sp <- as(CHAS, "SpatialPoints")
 sg_sp <- as(sg, "SpatialPolygons")
 ```
-```{r}
+```{r echo=TRUE}
 childcare_ppp <- as(childcare_sp, "ppp")
 CHAS_ppp <- as(CHAS_sp, "ppp")
 ```

@@ -1490,6 +1490,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h1 id="importing-geospatial-data">Importing Geospatial Data</h1>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare_sf</span> <span class='op'>&lt;-</span> <span class='fu'>st_read</span><span class='op'>(</span><span class='st'>"data/child-care-services-geojson.geojson"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>st_transform</span><span class='op'>(</span>crs <span class='op'>=</span> <span class='fl'>3414</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code>Reading layer `child-care-services-geojson&#39; from data source 
   `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data\child-care-services-geojson.geojson&#39; 
   using driver `GeoJSON&#39;
@@ -1501,6 +1506,10 @@ z_range:       zmin: 0 zmax: 0
 Geodetic CRS:  WGS 84</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sg_sf</span> <span class='op'>&lt;-</span> <span class='fu'>st_read</span><span class='op'>(</span>dsn <span class='op'>=</span> <span class='st'>"data"</span>, layer<span class='op'>=</span><span class='st'>"CostalOutline"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code>Reading layer `CostalOutline&#39; from data source 
   `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data&#39; 
   using driver `ESRI Shapefile&#39;
@@ -1511,6 +1520,11 @@ Bounding box:  xmin: 2663.926 ymin: 16357.98 xmax: 56047.79 ymax: 50244.03
 Projected CRS: SVY21</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mpsz_sf</span> <span class='op'>&lt;-</span> <span class='fu'>st_read</span><span class='op'>(</span>dsn <span class='op'>=</span> <span class='st'>"data"</span>, 
+                layer <span class='op'>=</span> <span class='st'>"MP14_SUBZONE_WEB_PL"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code>Reading layer `MP14_SUBZONE_WEB_PL&#39; from data source 
   `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data&#39; 
   using driver `ESRI Shapefile&#39;
@@ -1522,22 +1536,50 @@ Projected CRS: SVY21</code></pre>
 </div>
 <h1 id="importing-rds">Importing RDS</h1>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare</span> <span class='op'>&lt;-</span> <span class='fu'>read_rds</span><span class='op'>(</span><span class='st'>"data/rds/childcare.rds"</span><span class='op'>)</span>
+<span class='va'>CHAS</span> <span class='op'>&lt;-</span> <span class='fu'>read_rds</span><span class='op'>(</span><span class='st'>"data/rds/CHAS.rds"</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>CHAS_sf</span> <span class='op'>&lt;-</span> <span class='fu'>st_as_sf</span><span class='op'>(</span><span class='va'>CHAS</span>, coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X_COORDINATE"</span>,<span class='st'>"Y_COORDINATE"</span> <span class='op'>)</span>, crs<span class='op'>=</span><span class='fl'>3414</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare</span><span class='op'>$</span><span class='va'>Lat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>childcare</span><span class='op'>$</span><span class='va'>Lat</span><span class='op'>)</span>
+<span class='va'>childcare</span><span class='op'>$</span><span class='va'>Lng</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>childcare</span><span class='op'>$</span><span class='va'>Lng</span><span class='op'>)</span>
+<span class='va'>childcare_sf</span> <span class='op'>&lt;-</span> <span class='fu'>st_as_sf</span><span class='op'>(</span><span class='va'>childcare</span>, coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Lng"</span>, <span class='st'>"Lat"</span><span class='op'>)</span>, crs<span class='op'>=</span><span class='fl'>4326</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>st_transform</span><span class='op'>(</span>crs <span class='op'>=</span> <span class='fl'>3414</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare</span> <span class='op'>&lt;-</span> <span class='fu'>as_Spatial</span><span class='op'>(</span><span class='va'>childcare_sf</span><span class='op'>)</span>
+<span class='va'>CHAS</span> <span class='op'>&lt;-</span> <span class='fu'>as_Spatial</span><span class='op'>(</span><span class='va'>CHAS_sf</span><span class='op'>)</span>
+<span class='va'>mpsz</span> <span class='op'>&lt;-</span> <span class='fu'>as_Spatial</span><span class='op'>(</span><span class='va'>mpsz_sf</span><span class='op'>)</span>
+<span class='va'>sg</span> <span class='op'>&lt;-</span> <span class='fu'>as_Spatial</span><span class='op'>(</span><span class='va'>sg_sf</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare_sp</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>childcare</span>, <span class='st'>"SpatialPoints"</span><span class='op'>)</span>
+<span class='va'>CHAS_sp</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>CHAS</span>, <span class='st'>"SpatialPoints"</span><span class='op'>)</span>
+<span class='va'>sg_sp</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>sg</span>, <span class='st'>"SpatialPolygons"</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>childcare_ppp</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>childcare_sp</span>, <span class='st'>"ppp"</span><span class='op'>)</span>
+<span class='va'>CHAS_ppp</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>CHAS_sp</span>, <span class='st'>"ppp"</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <h1 id="section"></h1>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
