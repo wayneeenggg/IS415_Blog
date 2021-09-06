@@ -1,0 +1,40 @@
+---
+title: "In-Class_Ex04"
+description: |
+  A short description of the post.
+author:
+  - name: Wayne Ng
+    url: https://www.linkedin.com/in/wayne-ng-56331b208
+date: 09-06-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Installing R packages 
+- sf is mainly used for importing geospatial data.
+- raster is for handling raster-based geospatial data
+- tmap is to plot
+- spatstat is in ppp format
+
+```{r}
+packages = c('maptools', 'sf', 'raster','spatstat', 'tmap', 'tidyverse')
+for (p in packages){
+if(!require(p, character.only = T)){
+install.packages(p)
+}
+library(p,character.only = T)
+}
+```
+# 
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
