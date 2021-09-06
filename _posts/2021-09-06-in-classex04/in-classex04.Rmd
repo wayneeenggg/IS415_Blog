@@ -60,6 +60,21 @@ childcare$Lng <- as.numeric(childcare$Lng)
 childcare_sf <- st_as_sf(childcare, coords = c("Lng", "Lat"), crs=4326) %>%
   st_transform(crs = 3414)
 ```
+```{r}
+childcare <- as_Spatial(childcare_sf)
+CHAS <- as_Spatial(CHAS_sf)
+mpsz <- as_Spatial(mpsz_sf)
+sg <- as_Spatial(sg_sf)
+```
+```{r}
+childcare_sp <- as(childcare, "SpatialPoints")
+CHAS_sp <- as(CHAS, "SpatialPoints")
+sg_sp <- as(sg, "SpatialPolygons")
+```
+```{r}
+childcare_ppp <- as(childcare_sp, "ppp")
+CHAS_ppp <- as(CHAS_sp, "ppp")
+```
 
 
 # 
