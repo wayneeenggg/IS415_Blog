@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/child-care-services-geojson.geojson","data/CostalOutline.dbf","data/CostalOutline.prj","data/CostalOutline.sbn","data/CostalOutline.sbx","data/CostalOutline.shp","data/CostalOutline.shx","data/MP14_SUBZONE_WEB_PL.dbf","data/MP14_SUBZONE_WEB_PL.prj","data/MP14_SUBZONE_WEB_PL.sbn","data/MP14_SUBZONE_WEB_PL.sbx","data/MP14_SUBZONE_WEB_PL.shp","data/MP14_SUBZONE_WEB_PL.shp.xml","data/MP14_SUBZONE_WEB_PL.shx"]}
+  {"type":"character","attributes":{},"value":["data/child-care-services-geojson.geojson","data/CostalOutline.dbf","data/CostalOutline.prj","data/CostalOutline.sbn","data/CostalOutline.sbx","data/CostalOutline.shp","data/CostalOutline.shx","data/MP14_SUBZONE_WEB_PL.dbf","data/MP14_SUBZONE_WEB_PL.prj","data/MP14_SUBZONE_WEB_PL.sbn","data/MP14_SUBZONE_WEB_PL.sbx","data/MP14_SUBZONE_WEB_PL.shp","data/MP14_SUBZONE_WEB_PL.shp.xml","data/MP14_SUBZONE_WEB_PL.shx","data/rds/CHAS.rds","data/rds/childcare.rds","in-classex04_files/anchor-4.2.2/anchor.min.js","in-classex04_files/bowser-1.9.3/bowser.min.js","in-classex04_files/distill-2.2.21/template.v2.js","in-classex04_files/header-attrs-2.10/header-attrs.js","in-classex04_files/jquery-1.11.3/jquery.min.js","in-classex04_files/popper-2.6.0/popper.min.js","in-classex04_files/tippy-6.2.7/tippy-bundle.umd.min.js","in-classex04_files/tippy-6.2.7/tippy-light-border.css","in-classex04_files/tippy-6.2.7/tippy.css","in-classex04_files/tippy-6.2.7/tippy.umd.min.js","in-classex04_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2118,10 +2118,52 @@ Take-Home Exercise
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<h1 id="importing-geospatial-data">Importing Geospatial Data</h1>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>Reading layer `child-care-services-geojson&#39; from data source 
+  `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data\child-care-services-geojson.geojson&#39; 
+  using driver `GeoJSON&#39;
+Simple feature collection with 1545 features and 2 fields
+Geometry type: POINT
+Dimension:     XYZ
+Bounding box:  xmin: 103.6824 ymin: 1.248403 xmax: 103.9897 ymax: 1.462134
+z_range:       zmin: 0 zmax: 0
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>Reading layer `CostalOutline&#39; from data source 
+  `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data&#39; 
+  using driver `ESRI Shapefile&#39;
+Simple feature collection with 60 features and 4 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: 2663.926 ymin: 16357.98 xmax: 56047.79 ymax: 50244.03
+Projected CRS: SVY21</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>Reading layer `MP14_SUBZONE_WEB_PL&#39; from data source 
+  `C:\wayneeenggg\IS415_Blog\_posts\2021-09-06-in-classex04\data&#39; 
+  using driver `ESRI Shapefile&#39;
+Simple feature collection with 323 features and 15 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33
+Projected CRS: SVY21</code></pre>
+</div>
+<h1 id="importing-rds">Importing RDS</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <h1 id="section"></h1>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
