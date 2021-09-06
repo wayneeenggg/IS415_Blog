@@ -31,6 +31,37 @@ install.packages(p)
 library(p,character.only = T)
 }
 ```
+# Importing Geospatial Data
+```{r}
+childcare_sf <- st_read("data/child-care-services-geojson.geojson") %>%
+  st_transform(crs = 3414)
+```
+
+```{r}
+sg_sf <- st_read(dsn = "data", layer="CostalOutline")
+```
+```{r}
+mpsz_sf <- st_read(dsn = "data", 
+                layer = "MP14_SUBZONE_WEB_PL")
+```
+# Importing RDS
+```{r}
+childcare <- read_rds("data/rds/childcare.rds")
+CHAS <- read_rds("data/rds/CHAS.rds")
+```
+
+```{r}
+CHAS_sf <- st_as_sf(CHAS, coords = c("X_COORDINATE","Y_COORDINATE" ), crs=3414)
+```
+
+```{r}
+childcare$Lat <- as.numeric(childcare$Lat)
+childcare$Lng <- as.numeric(childcare$Lng)
+childcare_sf <- st_as_sf(childcare, coords = c("Lng", "Lat"), crs=4326) %>%
+  st_transform(crs = 3414)
+```
+
+
 # 
 
 Distill is a publication format for scientific and technical writing, native to the web.
